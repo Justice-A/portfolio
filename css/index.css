@@ -120,10 +120,11 @@ body {
 .main-image {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 450px;
   height: 400px;
   background-color: var(--dark-colour);
   border-radius: 10px;
+  margin-top: 90px;
 }
 
 .hero-buttons {
@@ -134,11 +135,14 @@ body {
   .hero {
     display: flex;
     flex-direction: column;
-    padding-top: 90px;
+    padding-top: 50px;
   }
   .main-text {
     display: flex;
     margin-top: 200px;
+  }
+  .main-image {
+    margin-top: 5px;
   }
   .bold-text {
     font-size: var(--font-xl);
@@ -168,6 +172,8 @@ body {
   color: var(--white-colour);
 }
 .email {
+  display: flex;
+  flex-direction: row;
   padding-top: 30px;
   font-size: var(--font-s);
 }
@@ -467,7 +473,7 @@ img.testimonial-image {
   }
 
   .about-text p {
-    font-size: var(--font-s);
+    font-size: 1rem;
     line-height: 1.5;
   }
   .about-content {
@@ -519,7 +525,9 @@ img.testimonial-image {
 
 @media (max-width: 550px) {
   /* For mobile-specific tweaks */
-
+  .testimonial-text {
+    font-size: 1rem;
+  }
   .skills-container,
   .services-container {
     grid-template-columns: 1fr; /* Stack everything vertically */
