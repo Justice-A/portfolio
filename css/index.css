@@ -147,6 +147,9 @@ body {
   .main-image {
     margin-top: 5px;
   }
+  .jacket {
+    margin-left: -15px;
+  }
   .bold-text {
     font-size: var(--font-xl);
   }
