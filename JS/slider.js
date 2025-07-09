@@ -2,7 +2,7 @@ $(document).ready(function () {
   //second slider
   $(".portfolio-slider").slick({
     dots: true, // Show navigation dots
-    arrows: false, // Disable navigation arrows
+    arrows: true, // Disable navigation arrows
     infinite: true, // Enable infinite scroll
     slidesToShow: 2, // Number of slides visible
     slidesToScroll: 1, // Number of slides to scroll
