@@ -1,353 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolu Aregbesola - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
-  </head>
-  <body>
-    <div class="navbar">
-      <div class="menu">
-        <div id="hamburger" class="hamburger">&#9776;</div>
-        <div id="side-bar" class="side-bar">
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#next-hero">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonial</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div> 
-      <div class="nav-contents">
-        <div class="nav-links">
-          <ul class="">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#next-hero">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonial</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="overlay"></div>
-    <section class="hero container" id="hero">
-      <div class="main-text">
-        <div class="bold-text">
-          <p>Bolu</p>
-          <p>Aregbesola</p>
-        </div>
-        <div class="sub-text">
-          <p>Web Developer</p>
-        </div>
-        <div class="hero-buttons">
-          <a href="#contact"><button class="btn btn-secondary btn--lg">Contact</button></a>
-          <a href="#portfolio"><button class="btn btn-primary btn--lg">portfolio</button></a>
-        </div>
-      </div>
-      <div class="main-image container">
-        <img src="./Images/me.jpg" alt="bolu-image" class="jacket">
-
-      </div>
-    </section>
-    <section class="next-hero" id="next-hero">
-      <div class="about container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2 class="heading">About</h2>
-            <p>I’m Bolu, a frontend developer who helps brands and creators develop websites/landing pages</p>
-          
-            <p>that don’t just look good. They convert visitors into paying customers </p>
-          
-            <p>If you you're ready to stand out with a proffesional site, let’s talk.</p>
-
-            <p><strong>Want to see what I can do?</strong> Check out my portfolio below.</p>
-            
-            <p><strong>Ready to work together?</strong> Reach out:</p> 
-            
-            <div class="email">
-              <div>
-              <p>Email Me:</p>
-              <a href="mailto:justicearegbesola@gmail.com">
-                <i class="bi bi-envelope-check-fill"></i>
-              </a></div>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .glass-effect {
+            background: rgba(15, 23, 42, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .skill-hover:hover {
+            transform: scale(1.1) rotate(5deg);
+            transition: all 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#020407',
+                        'dark-secondary': '#0a0f1a',
+                        'blue-primary': '#2563eb',
+                        'blue-muted': '#1e293b',
+                        'accent-blue': '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-dark-bg to-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="hover:text-blue-400 transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors duration-300 relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#portfolio" class="hover:text-blue-400 transition-colors duration-300 relative group">
+                        Portfolio
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#testimonials" class="hover:text-blue-400 transition-colors duration-300 relative group">
+                        Testimonials
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors duration-300 relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list" id="menu-icon"></i>
+                </button>
             </div>
-          </div>
-          
         </div>
-    </div>
-    
-    
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-white/20">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#hero" class="block hover:text-blue-400 transition-colors duration-300" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" class="block hover:text-blue-400 transition-colors duration-300" onclick="toggleMobileMenu()">About</a>
+                <a href="#portfolio" class="block hover:text-blue-400 transition-colors duration-300" onclick="toggleMobileMenu()">Portfolio</a>
+                <a href="#testimonials" class="block hover:text-blue-400 transition-colors duration-300" onclick="toggleMobileMenu()">Testimonials</a>
+                <a href="#contact" class="block hover:text-blue-400 transition-colors duration-300" onclick="toggleMobileMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left slide-in">
+                <h1 class="text-6xl lg:text-8xl font-bold mb-6">
+                    <span class="block gradient-text">Bolu</span>
+                    <span class="block gradient-text">Aregbesola</span>
+                </h1>
+                <p class="text-2xl lg:text-3xl text-gray-400 mb-8">Web Developer</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact">
+                        <button class="px-8 py-3 bg-gray-800 hover:bg-white hover:text-gray-900 border-2 border-gray-600 rounded-full transition-all duration-300 hover-glow">
+                            Contact
+                        </button>
+                    </a>
+                    <a href="#portfolio">
+                        <button class="px-8 py-3 bg-white text-gray-900 hover:bg-blue-600 hover:text-white border-2 border-white rounded-full transition-all duration-300 hover-glow">
+                            Portfolio
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center fade-in">
+                <div class="relative">
+                    <div class="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gray-600 floating hover-glow">
+                        <img src="./Images/me.jpg" alt="Bolu Aregbesola" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-60 animate-pulse"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-40 animate-pulse"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
-   <section class="skills">
-    <h2>My Skills</h2>
-    <div class="skills-container">
-      <div class="skill-card">
-        <i class="fab fa-html5 skill-icon html"></i>
-        <p>HTML</p>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-css3-alt skill-icon css"></i>
-        <p>CSS</p>
-      </div>
-      <div class="skill-card">
-        <i class="fab fa-js-square skill-icon js"></i>
-        <p>JavaScript</p>
-      </div>
-         <div class="skill-card">
-        <img src="./Images/react.png"
-        alt="React"
-        class="skill-icon"
-        style="width: 100px; height: 50px;" />
-        <p>React</p>
-      </div>
-      <div class="skill-card">
-        <img src="./Images/tailwind.png"
-        alt="Tailwind CSS"
-        class="skill-icon"
-        style="width: 48px; height: 48px;" />
-        <p>Tailwind CSS</p>
-      </div>
-       <div class="skill-card">
-        <img src="./Images/figma.png"
-        alt="Figma"
-        class="skill-icon"
-        style="width: 68px; height: 48px;" />
-        <p>Figma</p>
-      </div>
-     </div>
-    </section>
-    <section class="portfolio" id="portfolio">
-      <h2 class="heading container">Portfolio</h2>
-      <div class="portfolio-slider container">
-        <a href="https://saas-coral-gamma.vercel.app/">
-          <div class="portfolio-container">
-            <img
-              src="./Images/Screenshot (37).png"
-              alt="image 1"
-              class="portfolio-image"
-            />
-            <p class="project">Saas landing-page</p>
-          </div>
-      
-        <a href="https://dstv-app-home.vercel.app">
-        <div class="portfolio-container">
-          <img
-            src="./Images/Neon Retro Stars Marketing Mockup Website Instagram Post_20250123_082643_0000.png"
-            alt="image 3"
-            class="portfolio-image"
-          />
-          <p class="project">DStv website</p>
-        </div>
-      </a>
-    
-        <a href="https://chidinma-2vtb.vercel.app/">
-        <div class="portfolio-container">
-          <img
-            src="./Images/Screenshot (60).png"
-            alt="image 5"
-            class="portfolio-image"
-          />
-          <p class="project">Portfolio site</p>
-        </div>
-      </a>
-        <a href="https://scentuary-co.netlify.app/">
-        <div class="portfolio-container">
-          <img
-            src="./Images/Screenshot (61).png"
-            alt="image 5"
-            class="portfolio-image"
-          />
-          <p class="project">Perfume landing page</p>
-        </div>
-      </a>
-        <a href="https://sushi-app-eta.vercel.app">
-        <div class="portfolio-container">
-          <img
-            src="./Images/sushi.png"
-            alt="image 6"
-            class="portfolio-image"
-          />
-          <p class="project">Sushi website</p>
-        </div>
-      </a>
-          <a href="http://rocket-alpha-five.vercel.app/">
-            <div class="portfolio-container">
-              <img
-                src="./Images/Screenshot (38).png"
-                alt="image 2"
-                class="portfolio-image"
-              />
-              <p class="project">Acme Rockets</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text">About</h2>
+            <div class="glass-effect rounded-2xl p-8 lg:p-12">
+                <div class="text-lg lg:text-xl space-y-6 leading-relaxed">
+                    <p>I'm Bolu, a frontend developer who helps brands and creators develop websites/landing pages that don't just look good. They convert visitors into paying customers.</p>
+                    <p>If you're ready to stand out with a professional site, let's talk.</p>
+                    <p><strong class="text-blue-400">Want to see what I can do?</strong> Check out my portfolio below.</p>
+                    <p><strong class="text-blue-400">Ready to work together?</strong> Reach out:</p>
+                    <div class="flex items-center gap-4 pt-4">
+                        <p class="text-xl">Email Me:</p>
+                        <a href="mailto:justicearegbesola@gmail.com" class="text-5xl text-blue-400 hover:text-white transition-colors duration-300">
+                            <i class="bi bi-envelope-check-fill"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </a>
-      </div>
+        </div>
     </section>
-    <section class="testimonials" id="testimonials">
-      <h2 class="heading container">Testimonial</h2>
-      <div class="testimonial-wrapper container">
-        <div class="testimonial">
-          <img
-            src="./Images/WhatsApp Image 2025-03-31 at 9.14.29 PM.jpeg"
-            alt="profile image 1"
-            class="testimonial-image"
-          />
-          <h3>Salvin Sawyerr Idehen</h3>
-          <h3 class="title">Copyeditor</h3>
-          <div class="testimonial-text">
-            <p>"I’m stoked to recommend Bolu!</p>
-            <p> His web designs are straight-up fire — every time I see one of his posts on LinkedIn,</p>
-            <p>I’m blown away by how clean, creative, and just NEXT-LEVEL they are.</p> 
-            <p>He has this knack for making sites that don’t just look good but FEEL alive, you know?</p>
-            <p>Like this sample website he designed in the DSTV pattern! </p>
-            <p>Honestly? I even preferred it to the original!</p>
-            <p>Anyone lucky enough to work with Bolu is getting a total game-changer.</p>
-            <p>No hesitation here — he’s a 10/10!"</p>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                    <p class="font-semibold">HTML</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                    <p class="font-semibold">CSS</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
+                    <p class="font-semibold">JavaScript</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <img src="./Images/react.png" alt="React" class="w-52 h-18 mx-auto mb-4">
+                    <p class="font-semibold">React</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <img src="./Images/tailwind.png" alt="Tailwind CSS" class="w-12 h-12 mx-auto mb-4">
+                    <p class="font-semibold">Tailwind CSS</p>
+                </div>
+                <div class="glass-effect rounded-xl p-6 text-center skill-hover hover-glow">
+                    <img src="./Images/figma.png" alt="Figma" class="w-16 h-12 mx-auto mb-4">
+                    <p class="font-semibold">Figma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text">Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://saas-coral-gamma.vercel.app/" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/Screenshot (37).png" alt="Saas landing-page" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">Saas Landing Page</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://dstv-app-home.vercel.app" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/Neon Retro Stars Marketing Mockup Website Instagram Post_20250123_082643_0000.png" alt="DStv website" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">DStv Website</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://chidinma-2vtb.vercel.app/" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/Screenshot (60).png" alt="Portfolio site" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">Portfolio Site</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://scentuary-co.netlify.app/" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/Screenshot (61).png" alt="Perfume landing page" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">Perfume Landing Page</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://sushi-app-eta.vercel.app" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/sushi.png" alt="Sushi website" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">Sushi Website</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://rocket-alpha-five.vercel.app/" class="group block">
+                    <div class="glass-effect rounded-xl overflow-hidden hover-glow transition-all duration-300 group-hover:scale-105">
+                        <img src="./Images/Screenshot (38).png" alt="Acme Rockets" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold group-hover:text-blue-primary transition-colors duration-300">Acme Rockets</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-8 text-center hover-glow transition-all duration-300 hover:scale-105">
+                    <i class="bi bi-laptop text-6xl text-blue-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Web Development</h3>
+                    <p class="text-gray-300">Building responsive, modern websites that deliver exceptional user experiences</p>
+                </div>
+                <div class="glass-effect rounded-xl p-8 text-center hover-glow transition-all duration-300 hover:scale-105">
+                    <i class="bi bi-brush text-6xl text-pink-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">Graphic Design</h3>
+                    <p class="text-gray-300">Creating stunning visual designs that capture your brand's essence</p>
+                </div>
+                <div class="glass-effect rounded-xl p-8 text-center hover-glow transition-all duration-300 hover:scale-105">
+                    <i class="bi bi-ui-radios text-6xl text-purple-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-300">Designing intuitive interfaces that users love to interact with</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 gradient-text">Testimonials</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-8 border border-yellow-600 hover-glow">
+                    <div class="text-center mb-6">
+                        <img src="./Images/WhatsApp Image 2025-03-31 at 9.14.29 PM.jpeg" alt="Salvin Sawyerr Idehen" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold">Salvin Sawyerr Idehen</h3>
+                        <p class="text-blue-400">Copyeditor</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "I'm stoked to recommend Bolu! His web designs are straight-up fire — every time I see one of his posts on LinkedIn, I'm blown away by how clean, creative, and just NEXT-LEVEL they are. He has this knack for making sites that don't just look good but FEEL alive, you know? Like this sample website he designed in the DSTV pattern! Honestly? I even preferred it to the original! Anyone lucky enough to work with Bolu is getting a total game-changer. No hesitation here — he's a 10/10!"
+                    </p>
+                </div>
+                <div class="glass-effect rounded-xl p-8 border border-yellow-600 hover-glow">
+                    <div class="text-center mb-6">
+                        <img src="./Images/Esther's profile.png" alt="Esther West" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold">Esther West</h3>
+                        <p class="text-blue-400">Skincare Content Writer</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "My first ever LinkedIn recommendation goes to Bolu. We worked together on my LinkedIn banner and my profile picture. He was so patient with me during my busy days and allowed me to express my thoughts during the journey. I loved the detailing of the work and the suggestions he constantly showed me. Bolu does not just design, he's a breath of fresh air to your personal brand or business on the internet. It's a smooth work he did and I loved every form of it. Let's not even talk about the intentionality he brought to bringing my designs to life. Thank you Bolu."
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-xl p-8 border border-yellow-600 hover-glow">
+                    <div class="text-center mb-6">
+                        <img src="./Images/deborah.jpeg" alt="Deborah Omitade" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold">Deborah Omitade</h3>
+                        <p class="text-blue-400">Graphics designer</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        "I really love the delivery he did for my portfolio. It was really more than I imagined and even more than I thought I needed. It was really amazing working with him because he was very understanding in spite of everything and the work came out good."
+                    </p>
+                </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-16 gradient-text">Contact Me</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="flex gap-6">
+                    <a href="https://linkedin.com/in/bolu-aregbesola-859956307" target="_blank" class="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center text-3xl hover-glow transition-all duration-300 hover:scale-125">
+                        <i class="bi bi-linkedin text-blue-400"></i>
+                    </a>
+                    <a href="https://x.com/@BoluAregbesola" target="_blank" class="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center text-3xl hover-glow transition-all duration-300 hover:scale-125">
+                        <i class="bi bi-twitter-x text-white"></i>
+                    </a>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://wa.me/2348157987880" target="_blank" class="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center text-3xl hover-glow transition-all duration-300 hover:scale-125">
+                        <i class="bi bi-whatsapp text-green-400"></i>
+                    </a>
+                    <a href="mailto:justicearegbesola@gmail.com" class="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center text-3xl hover-glow transition-all duration-300 hover:scale-125">
+                        <i class="bi bi-envelope-fill text-yellow-400"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-white/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-center md:text-left">© 2025 Bolu Aregbesola. All rights reserved</p>
+                <div class="flex gap-6">
+                    <a href="#hero" class="hover:text-blue-400 transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors duration-300">About</a>
+                    <a href="#portfolio" class="hover:text-blue-400 transition-colors duration-300">Portfolio</a>
+                    <a href="#testimonials" class="hover:text-blue-400 transition-colors duration-300">Testimonials</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors duration-300">Contact</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://linkedin.com/in/bolu-aregbesola-859956307" target="_blank" class="text-2xl hover:text-blue-400 transition-colors duration-300">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/@BoluAregbesola" target="_blank" class="text-2xl hover:text-blue-400 transition-colors duration-300">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="mailto:justicearegbesola@gmail.com" class="text-2xl hover:text-blue-400 transition-colors duration-300">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
             
-          </div>
-        </div>
-         <div class="testimonial">
-          <img
-            src="./Images/Esther's profile.png"
-            alt="profile image 2"
-            class="testimonial-image"
-          />
-          <h3>Esther West</h3>
-          <h3 class="title">Skincare content writer</h3>
-          <div class="testimonial-text">
-            <p>"My first ever Linkedln recommendation goes to Bolu.</p>
-            <p>We worked together on my Linkedln banner and my profile picture.</p>
-            <p>He was so patient with me during my busy days and allowed me to express  </p> 
-            <p>my thoughts during the journey. I loved the detailing of the work and </p>
-            <p>the suggestions he constantly showed me. Bolu does not just design,</p>
-            <p> he's a breath of fresh air to your personal brand or business on the </p>
-            <p> internet. It's a smooth work he did and I loved every form of it.</p>
-            <p>Let's not even talk about the intentionality he brought to bringing my  </p>
-            <p>designs to life. Thank you Bolu."</p>
-          </div>
-        </div>
-        </div>
-      </section>
-    <section class="services">
-      <h2>My Services</h2>
-      <div class="services-container">
-        <div class="service-card">
-          <i class="bi bi-laptop service-icon web-dev"></i>
-          <p>Web Development</p>
-        </div>
-        <div class="service-card">
-          <i class="bi bi-brush service-icon graphic-design"></i>
-          <p>Graphic Design</p>
-        </div>
-        <div class="service-card">
-          <i class="bi bi-ui-radios service-icon uiux"></i>
-          <p>UI/UX Design</p>
-        </div>
-      </div>
-    </section>
-    
-    
-    <section class="contact" id="contact">
-      <div class="socials">
-        <h2 class="heading container">Contact Me</h2>
-        <div class="contact-links">
-          <div class="main-socials">
-          <a
-            href="https://linkedin.com/in/bolu-aregbesola-859956307"
-            target="_blank"
-            class="contact-card linkedin"
-          >
-            <i class="bi bi-linkedin"></i>
-          </a>
-          <a
-            href="https://x.com/@BoluAregbesola"
-            target="_blank"
-            class="contact-card twitter"
-          >
-            <i class="bi bi-twitter-x"></i>
-          </a>
-        </div>
-        <div class="msg-contact">
-          <a
-            href="https://wa.me/2348157987880"
-            target="_blank"
-            class="contact-card whatsapp"
-          >
-            <i class="bi bi-whatsapp"></i>
-          </a>
-          <a href="mailto:your-email@gmail.com" class="contact-card gmail">
-            <i class="bi bi-envelope-fill"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="footer-wrapper">
-      <footer class="footer">
-     
-          <div class="footer-content container">
-            <p>© 2025 Bolu Aregbesola. All rights reserved</p>
-            <ul class="footer-links">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#next-hero">About</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="footer-socials">
-              <a href="https://linkedin.com/in/bolu-aregbesola-859956307" target="_blank">
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <a href="https://x.com/@BoluAregbesola" target="_blank">
-                <i class="bi bi-twitter-x"></i>
-              </a>
-              <a href="mailto:justicearegbesola@gmail.com">
-                <i class="bi bi-envelope-fill"></i>
-              </a>
-            </div>
-          </div>
-  
-      </footer>
-      
-    </section>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('bi-x');
+                icon.classList.add('bi-list');
+            } else {
+                icon.classList.remove('bi-list');
+                icon.classList.add('bi-x');
+            }
+        }
 
-    <script src="./JS/slider.js"></script>
-  </body>
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
 </html>
